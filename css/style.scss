@@ -1,0 +1,227 @@
+// .............Global Settings....
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background: #000;
+}
+ul,ol,li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+// .............Global Settings....End
+
+// .............Header....
+
+
+header{
+    menu{
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: #000;
+        .menu_control{
+            position: absolute;
+            right: 25px;
+            top: 25px;
+            z-index: 10;
+            button{
+                border: 0;
+                outline: 0;
+                padding: 7px 5px;
+                width: 35px;
+                height: 45px;
+                background: #252525;
+                color: white;
+                cursor: pointer;
+                position: relative;
+                overflow: hidden;
+                border-radius: 3px;
+                span{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    display: block;
+                    width: 70%;
+                    height: 2px;
+                    transition: .5s;
+                    background: #fff;
+                    &:nth-child(1){
+                        top: 35%;
+                     &.active{
+                        top: 50%;
+                        transform: translate(-50%, -50%) rotate(45deg);
+                        animation: .5s linear animate_span1;
+                        @keyframes animate_span1 {
+                            0%{
+                                transform: translate(-50%, -50%) rotate(0);
+    
+                            }
+                            80%{
+                                transform: translate(-50%, -50%) rotate(1turn);
+    
+                            }
+                            100%{
+                                transform: translate(-50%, -50%) rotate(45deg);
+                                
+                            }
+                        }
+                     }
+
+                    }
+                    &:nth-child(2){
+                        &.active{
+                            left: 150%;
+                            opacity: 0;
+                        }
+                    }
+                    &:nth-child(3){
+                        top: 65%;
+                        &.active{
+                        top: 50%;
+                        transform: translate(-50%, -50%) rotate(-45deg);
+                        animation: .5s linear animate_span3;
+                        @keyframes animate_span3 {
+                            0%{
+                                transform: translate(-50%, -50%) rotate(0);
+    
+                            }
+                            80%{
+                                transform: translate(-50%, -50%) rotate(-1turn);
+    
+                            }
+                            100%{
+                                transform: translate(-50%, -50%) rotate(-45deg);
+                                
+                            }
+                        }
+                        }
+                    }
+                    
+                }
+            }
+            @media (min-width: 990px){
+                display: none;   
+            }
+        }
+        .menu_ul{
+            background: #252525;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding-top: 45px;
+            transform: translateX(-100%);
+            opacity: 0;
+            pointer-events: none;
+            transition: .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            &.toggleLeftSlide{
+                transform: translateX(0%);
+                opacity: 1;
+                pointer-events: visible;
+            }
+            li{
+                padding: 0 25px;
+                a{
+                    color: #ffffff;
+                    padding: 15px;
+                    border-bottom: 1px solid #333;
+                    display: flex;
+                    text-decoration: none;
+                    i{
+                        display: inline-block;
+                        width: 30px;
+                    }
+                    &.active{
+                        color: #ffb400;
+                    }
+                }
+                &:last-child a{
+                    border-bottom: none;
+                }
+            }
+            @media (min-width: 990px){
+                transform: translateX(0%);
+                opacity: 1;
+                pointer-events: visible;
+                background: transparent;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: auto;
+                li{
+                    text-align: right;
+                    a{
+                        display: inline-flex;
+                        position: relative;
+                        width: 200px;
+                        height: 45px;
+                        padding: 0!important;
+                        align-items: center;
+                        margin-bottom: 8px;
+                        justify-content: space-between;
+                        border-bottom: none;
+                        span{
+                            background: red;
+                            height: 100%;
+                            flex-grow:1;
+                            text-align: center;
+                            line-height: 45px;
+                            transform: translateX(60px);
+                            border-radius: 30px;
+                            opacity: 0;
+                            transition: .5s;
+                        }
+                        i{
+                            order: 1;
+                            background: white;
+                            width: 45px;
+                            display: inline-flex;
+                            height: 45px;
+                            justify-content: center;
+                            align-items: center;
+                            z-index: 2;
+                            position: relative;
+                            margin-left: 15px;
+                            border-radius: 30px;
+                            color: #ffb40f;
+                            transition: .5s;
+                            
+                        }
+                        &.active {
+                            i{
+                                background: #FFB400;
+                                color: #ffffff;
+                                &:hover{
+                                    color: #ffffff;
+                                }
+                            }
+                        }
+                        &:hover{
+                            color: #ffffff!important;
+                            span{
+                                transform: translateX(0px);
+                                opacity: 1;
+                            }
+                            i {
+                                background: #FFB400;
+                                color: #ffffff;
+                            }
+                        }
+                        
+                    }
+                }
+            }
+            
+        }
+    }
+}
+// .............Header....End
