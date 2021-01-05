@@ -512,7 +512,7 @@ main #home_section .row .content_home h3 {
 
 main #home_section .row .content_home strong {
   display: inline-block;
-  width: 80%;
+  width: 60%;
   line-height: 25px;
   font-weight: 400;
   padding-bottom: 15px;
@@ -581,5 +581,76 @@ main #home_section .row .content_home .about_it a:hover i {
         -ms-flex-align: stretch;
             align-items: stretch;
   }
+}
+
+main #about_section {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  position: relative;
+  -webkit-animation: 1s ease home_section forwards;
+          animation: 1s ease home_section forwards;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+}
+
+@keyframes home_section {
+  0% {
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+main #about_section .section_title {
+  margin: 0;
+  padding: 40px;
+}
+
+main #about_section .section_title h2 {
+  font-size: 100px;
+  text-align: center;
+  color: #252525;
+  letter-spacing: 12px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+main #about_section .section_title h2 span {
+  position: absolute;
+  font-size: 50px;
+  color: #ffffff;
+  letter-spacing: 1px;
+  font-weight: 900;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+main #about_section .section_title h2 span b {
+  color: #ffb400;
+}
+
+main #about_section [class*=container] {
+  color: #ffffff;
+}
+
+main #about_section [class*=container] h3 {
+  font-size: 27px;
+}
+
+main #about_section [class*=container] ul.list_order li {
+  margin: 0;
+  padding: 0 0 20px 0;
+  color: rgba(255, 255, 255, 0.9);
 }
 /*# sourceMappingURL=style.css.map */

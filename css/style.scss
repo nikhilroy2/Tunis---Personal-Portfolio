@@ -8,6 +8,7 @@ $dark1: #111111;
 $dark25: #252525;
 $dark_shadow: #2B2A2A;
 $light0: #ffffff;
+$light1: rgba(255, 255, 255, 0.9);
 $orange0: #ffb400;
 
 @mixin mp($a:0,$b:0){
@@ -301,7 +302,7 @@ main{
         overflow-y: auto;
         overflow-x: hidden;
     }
-    #home_section{
+    @mixin each_section{
         @include wh(100%,100%);
         min-height: 100vh;
         position: relative;
@@ -315,6 +316,9 @@ main{
                 transform: translateY(0px);
             }
         }
+    }
+    #home_section{
+        @include each_section();
         &::before{
             content: '';
             position: absolute;
@@ -376,7 +380,7 @@ main{
                 }
                 strong{
                     display: inline-block;
-                    width: 80%;
+                    width: 60%;
                     line-height: 25px;
                     font-weight: 400;
                     padding-bottom: 15px;
@@ -416,6 +420,44 @@ main{
                     @include flex-align(center);
                 }
 
+                }
+            }
+        }
+    }
+    #about_section{
+        @include each_section;
+        .section_title{
+            @include mp(0,40px);
+            h2{
+                font-size: 100px;
+                text-align: center;
+                color: $dark25;
+                letter-spacing: 12px;
+                position: relative;
+                @include mp;
+                span{
+                    position: absolute;
+                    font-size: 50px;
+                    color: $light0;
+                    letter-spacing: 1px;
+                    font-weight: 900;
+                    @include position_center();
+                    user-select: none;
+                    b{
+                        color: $orange0;
+                    }
+                }
+            }
+        }
+        [class*=container]{
+            color: $light0;
+            h3{
+                font-size: 27px;
+            }
+            ul.list_order{
+                li{
+                    @include mp(0, 0 0 20px 0);
+                    color: $light1;
                 }
             }
         }
