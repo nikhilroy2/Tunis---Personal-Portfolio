@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha3/css/bootstrap-grid.min.css'/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <link rel='stylesheet'
+        href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha3/css/bootstrap-grid.min.css' />
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <header>
         <menu class="position-fixed">
             <div class="menu_control">
-                <button onclick="toggleClick(this,'.menu_ul')"> 
-                <span></span>
-                <span></span>
-                <span></span> 
-            </button>
+                <button onclick="toggleClick(this,'.menu_ul')">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
             <ul class="menu_ul">
                 <li><a href="#" class="active"> <i class="fas fa-home    "></i> <span>HOME</span></a></li>
@@ -44,7 +48,9 @@
                             I'M <span>STEVE MILNER</span>
                         </h1>
                         <strong>
-                            I'm a Tunisian based web designer & front‑end developer focused on crafting clean & user‑friendly experiences, I am passionate about building excellent software that improves the lives of those around me.
+                            I'm a Tunisian based web designer & front‑end developer focused on crafting clean &
+                            user‑friendly experiences, I am passionate about building excellent software that improves
+                            the lives of those around me.
                         </strong>
                         <div class="about_it">
                             <a href="#">MORE ABOUT ME <i class="fas fa-user    "></i></a>
@@ -61,9 +67,10 @@
                 </h2>
             </div>
             <div class="container-xxl">
-                <div class="row justify-content-md-center">
-                    <div class="col-md-10"><h3>PERSONAL INFOS</h3></div>
-                    <div class="col-md-5">
+                <div class="row justify-content-md-center bottom_line">
+
+                    <div class="col-lg-5">
+                        <h3>PERSONAL INFOS</h3>
                         <div class="d-flex justify-content-between">
                             <ul class="list_order">
                                 <li>First Name : <strong>Steve</strong></li>
@@ -77,17 +84,144 @@
                                 <li>Phone : <strong>+21621184010</strong></li>
                                 <li>Email : <strong>you@mail.com</strong></li>
                                 <li>Skype : <strong>steve.milner</strong></li>
-                                <li>Langages  :  <strong>French, English</strong></li>
+                                <li>Langages : <strong>French, English</strong></li>
                             </ul>
+                        </div>
+                        <a href="#" class="btn_hover_axis">DOWNLOAD CV <i class="fas fa-download    "></i></a>
+                    </div>
+                    <div class="col-lg-5">
+                        <ul class="list_box">
+                            <li> <strong> 12 <sup>+</sup> </strong>
+                                <span>YEARS OF <br>
+                                    EXPERIENCE</span>
+                            </li>
+                            <li>
+                                <strong>97 <sup>+</sup></strong>
+                                <span>
+                                    COMPLETED <br>
+                                    PROJECTS
+                                </span>
+                            </li>
+                            <li> <strong>81 <sup>+</sup></strong>
+                                <span>HAPPY <br>
+                                    CUSTOMERS</span>
+                            </li>
+                            <li>
+                                <strong>53 <sup>+</sup></strong>
+                                <span>
+                                    AWARDS <br>
+                                    WON
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row mt-5" id="skills_row">
+                    <div class="col-12">
+                        <h3>MY SKILLS</h3>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="circle" id="circles-html"></div>
+                        <h5> HTML </h5>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="circle" id="circles-javascript"></div>
+
+                        <h5> JAVASCRIPT </h5>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="circle" id="circles-css"></div>
+
+                        <h5> CSS </h5>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="circle" id="circles-php"></div>
+
+                        <h5> PHP </h5>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="circle" id="circles-wordpress"></div>
+                        <h5> WORDPRESS </h5>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="circle" id="circles-jquery"></div>
+
+                        <h5> JQUERY </h5>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="circle" id="circles-angular"></div>
+
+                        <h5> ANGULAR </h5>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="circle" id="circles-react"></div>
+                        <h5> REACT </h5>
+                    </div>
+                </div>
+                <div class="row bottom_line mt-5 px-4 justify-content-md-center" id="experience_row">
+                    <div class="col-12">
+                        <h3>
+                            EXPERIENCE & EDUCATION
+                        </h3>
+                    </div>
+                    <div class="col-md-5 pr-md-5">
+                        <div class="wrapper_col mb-5 " data-content="&#xf0b1">
+                            <time>2018 - PRESENT</time>
+                            <div class="head_name">
+                                <h4 data-content=" - ENVATO"> WEB DEVELOPER </h4>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore adipisicing elit,
+                            </p>
+                        </div>
+                        <div class="wrapper_col  mb-5" data-content="&#xf0b1">
+                            <time>2013 - 2018</time>
+                            <div class="head_name">
+                                <h4 data-content=" - THEMEFOREST"> UI/UX DESIGNER </h4>
+                            </div>
+                            <p>
+                                Lorem incididunt dolor sit amet, consectetur eiusmod dunt doldunt dol elit, tempor incididunt
+                            </p>
+                        </div>
+                        <div class="wrapper_col  mb-5" data-content="&#xf0b1">
+                            <time>2005 - 2013</time>
+                            <div class="head_name">
+                                <h4 data-content=" - VIDEOHIVE"> CONSULTANT </h4>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet, tempor incididunt ut laboreconsectetur elit, sed do eiusmod tempor duntt
+                            </p>
                         </div>
                     </div>
                     <div class="col-md-5">
-                        <ul class="list_box">
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
+                        <div class="wrapper_col  mb-5" data-content="&#xf19d">
+                            <time>2015</time>
+                            <div class="head_name">
+                                <h4 data-content=" - OXFORD UNIVERSITY"> ENGINEERING DEGREE </h4>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do tempor incididunt ut labore
+                            </p>
+                        </div>
+                        <div class="wrapper_col  mb-5" data-content="&#xf19d">
+                            <time>2012</time>
+                            <div class="head_name">
+                                <h4 data-content=" - KIEV UNIVERSITY"> MASTER DEGREE </h4>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut adipisicing
+                            </p>
+                        </div>
+                        <div class="wrapper_col  mb-5" data-content="&#xf19d">
+                            <time>2009</time>
+                            <div class="head_name">
+                                <h4 data-content=" - TUNIS HIGH SCHOOL"> BACHELOR DEGREE </h4>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor ut labore
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -100,7 +234,9 @@
     </footer>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-
+    <!--Source: https://github.com/lugolabs/circles -->
+    <script src="./vendor/circles.min.js"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>

@@ -40,6 +40,41 @@ $orange0: #ffb400;
     justify-content: center;
     align-items: center;
 }
+@mixin btn_hover_axis{
+    background: $orange0;
+    color: $light0;
+    @include wh(190px,40px);
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 30px;
+    @include j-center;
+    font-size: 15px;
+    i{
+        display: inline-block;
+        @include wh(0px,30px);
+        @include j-center;
+        opacity: 0;
+        transition: .3s;
+    }
+    &:hover{
+        i{
+            opacity: 1;
+            @include wh(30px,30px);
+        }
+    }
+}
+.row.bottom_line{
+    position: relative;
+    padding-bottom: 35px;
+    &::after{
+        position: absolute;
+        @include position_center();
+        @include top_left(100%, 50% );
+        @include wh(35%, 1px);
+        background: $dark25;
+        content: '';
+    }
+}
 body{
     @include mp();
     &::after{
@@ -297,7 +332,7 @@ main{
     background: $dark1;
     z-index: $low;
     pointer-events: visible;
-    
+    overflow-y: auto;
     @media (max-width: 991px){
         overflow-y: auto;
         overflow-x: hidden;
@@ -319,6 +354,7 @@ main{
     }
     #home_section{
         @include each_section();
+        overflow: hidden;
         &::before{
             content: '';
             position: absolute;
@@ -392,28 +428,7 @@ main{
                 }
                 .about_it{
                     a{
-                        background: $orange0;
-                        color: $light0;
-                        @include wh(190px,40px);
-                        text-decoration: none;
-                        display: inline-block;
-                        border-radius: 30px;
-                        @include j-center;
-                        font-size: 15px;
-                        i{
-                            display: inline-block;
-                            @include wh(0px,30px);
-                            @include j-center;
-                            opacity: 0;
-                            transition: .3s;
-                        }
-                        &:hover{
-                            i{
-                                opacity: 1;
-                                @include wh(30px,30px);
-                            }
-                        }
-
+                       @include btn_hover_axis;
                     }
                 @media (max-width: 991px){
                     display: flex;
@@ -458,6 +473,119 @@ main{
                 li{
                     @include mp(0, 0 0 20px 0);
                     color: $light1;
+                }
+            }
+            .btn_hover_axis{
+                @include btn_hover_axis;
+            }
+            ul.list_box{
+                display: flex;
+                flex-flow: row wrap;
+                li{
+                    border: 2px solid rgba($color: #fff, $alpha: .1);
+                    @include wh(44%, 170px);
+                    border-radius: 5px;
+                    @include mp(3%,35px);
+                    @media (min-width: 900px) and (max-width: 1220px) and (max-width: 600px) {
+                        @include wh(46%, 170px);
+                        @include mp(2%,15px);
+                    }
+                    @media (max-width: 600px) {
+                        @include wh(46%, 170px);
+                        @include mp(2%,15px);
+                    }
+                    strong{
+                        font-size: 45px;
+                        color: $orange0;
+                        display: block;
+                        position: relative;
+                       
+                        sup{
+                            font-size: 28px;
+                            color: currentColor;
+                            margin-left: -5px;
+                            font-weight: bolder;
+                          
+                        }
+                    }
+                    span{
+                        margin-left: 55px;
+                        display: block;
+                        position: relative;
+                        margin-top: 5px;
+                        line-height: 25px;
+                        @media (min-width: 900px) and (max-width: 1220px){
+                            font-size: 13px;
+                            line-height: 20px;
+                        }
+                        @media (max-width: 600px){
+                            font-size: 13px;
+                            line-height: 20px;
+                        }
+                        &::before{
+                            content: '';
+                            width: 40px;
+                            height: 1px;
+                            background: $light1;
+                            position: absolute;
+                            @include top_left(5px,-55px );
+                            
+                        }
+                    }
+                   
+                }
+            }
+            #skills_row{
+               text-align: center;
+               .circles-text{
+                   font-size: 30px!important;
+               }
+
+            }
+            #experience_row{
+                h3{
+                    text-align: center;
+                }
+                .wrapper_col{
+                    position: relative;
+                    padding-left: 40px;
+                    border-left: 1px solid $dark25;
+                    &::before{
+                        content: attr(data-content);
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: 900;
+                        font-size: 17px;
+                        @include wh(40px,40px);
+                        background: $orange0;
+                        color: $light0;
+                        border-radius: 50%;
+                        @include j-center;
+                        position: absolute;
+                        @include top_left(0, -20px );
+                    }
+                    time{
+                        font-size: 13px;
+                        border-radius: 15px;
+                        background: $dark25;
+                        color: $light1;
+                        display: inline-block;
+                        @include mp(0,3px 7px);
+                    }
+                    .head_name{
+                        h4{
+                            position: relative;
+                            &::after{
+                                content: attr(data-content);
+                                font-size: 13px;
+                                color: $light1;
+                                font-weight: lighter;
+                                padding-left: 4px;
+                            }
+                        }
+                    }
+                    p{
+                        font-size: 13px;
+                    }
                 }
             }
         }
