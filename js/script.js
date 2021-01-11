@@ -28,3 +28,7 @@ function toggleClick(val,menu){
         
     }
 })()
+function sectionToggle(val){
+    $('[data-section]').removeClass('active');
+    $(val).addClass('active');
+}

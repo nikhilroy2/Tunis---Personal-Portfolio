@@ -1,8 +1,12 @@
 // .............Global Settings....
+
 *{
     box-sizing: border-box;
     font-family: sans-serif;
+    scroll-behavior: smooth;
 }
+
+
 $dark0: #000000;
 $dark1: #111111;
 $dark25: #252525;
@@ -338,7 +342,7 @@ main{
         overflow-x: hidden;
     }
     @mixin each_section{
-        @include wh(100%,100%);
+        @include wh(100%,auto);
         min-height: 100vh;
         position: relative;
         animation: 1s ease home_section forwards;
@@ -587,6 +591,173 @@ main{
                         font-size: 13px;
                     }
                 }
+            }
+        }
+    }
+    #portfolio_section{
+        @include each_section;
+        .section_title{
+            @include mp(0,40px);
+            h2{
+                font-size: 100px;
+                text-align: center;
+                color: $dark25;
+                letter-spacing: 12px;
+                position: relative;
+                @include mp;
+                span{
+                    position: absolute;
+                    font-size: 50px;
+                    color: $light0;
+                    letter-spacing: 1px;
+                    font-weight: 900;
+                    @include position_center();
+                    user-select: none;
+                    b{
+                        color: $orange0;
+                    }
+                }
+            }
+        }
+        [class*=container]{
+            $hover_color: orange;
+            .col_wrapper{
+                height:250px;
+                padding: 15px;
+                // 4 direction box source: https://codepen.io/noeldelgado/pen/pGwFx
+                // and https://css-tricks.com/direction-aware-hover-effects/
+                .box{
+                    position:relative;
+                    width:100%;
+                    height: 100%;
+                    border-radius: 15px;
+                    overflow:hidden;
+                  }
+                  %box__dir{
+                    position:absolute;
+                    width:inherit;
+                    height:inherit;
+                    
+                    text-align:center;
+                    line-height:inherit;
+                    
+                    transition:transform .4s ease;
+                    
+                    &:before{
+                      position:absolute;
+                        
+                      content:'';
+                       /*
+                        * Calculation:
+                        *      ____a____
+                        *    /|\        |
+                        *   b | \       |
+                        *  /  a  \      |
+                        *  \  |  /      |
+                        *   \ | /       |
+                        *    \|/________|
+                        *
+                        *  a^2 = b^2+b^2
+                        *
+                        *  solve to b:
+                        *
+                        *  a^2         = 2b^2 | /2  
+                        *  a^2 / 2     =  b^2 | sqrt
+                        *  a / sqrt(2) =  b
+                        *
+                        * Percentage: 
+                        * a = 100%
+                        * 100 / sqrt(2) = 70.71%
+                        *                 ------
+                        */
+                      width:70.71%;
+                      height:70.71%;
+                      transform: rotate(45deg);
+                    }  
+                    
+                    &:hover{
+                      transform:translateX(0);
+                      z-index:1;
+                    }
+                      
+                    &:hover:before{
+                      width:100%;
+                      height:100%;
+                      transform: none;  
+                    }  
+                  }
+                  
+                  .box__right{
+                     @extend %box__dir;
+                     background:$hover_color;
+                     transform:translateX(100%);
+                    
+                     &:before{   
+                        right:100%;bottom:0;
+                        transform-origin: 100% 100%;
+                     }
+                     
+                     &:hover ~ .box__center{
+                       transform:translateX(-100%);   
+                     }
+                  } 
+                  
+                  .box__left{
+                     @extend %box__dir;
+                     background:$hover_color;
+                     transform:translateX(-100%);
+                    
+                     &:before{   
+                        left:100%;
+                        transform-origin: 0 0;  
+                     }   
+                      
+                     &:hover ~ .box__center{
+                       transform:translateX(100%);   
+                     }
+                  }
+                  
+                  .box__top{
+                     @extend %box__dir;
+                     background:$hover_color;
+                     transform:translateY(-100%);
+                    
+                     &:before{   
+                        top:100%;right:0;
+                        transform-origin:100% 0; 
+                     }
+                      
+                     &:hover ~ .box__center{
+                       transform:translateY(100%);   
+                     }
+                  }
+                  
+                  
+                  .box__bottom{
+                     @extend %box__dir;
+                     background:$hover_color;
+                     transform:translateY(100%);
+                    
+                     &:before{   
+                        bottom:100%;left:0;
+                        transform-origin:0 100%;
+                     }
+                      
+                     &:hover ~ .box__center{
+                       transform:translateY(-100%);   
+                     }
+                  }
+                  
+                  .box__center{
+                     @extend %box__dir;
+                     background: transparent;
+                     z-index:-1;
+                     img{
+                         width: 100%;
+                         height: 100%;
+                         object-fit: cover;
+                     }
+                  }
             }
         }
     }

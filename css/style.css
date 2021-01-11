@@ -2,6 +2,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: sans-serif;
+  scroll-behavior: smooth;
 }
 
 .row.bottom_line {
@@ -407,7 +408,7 @@ main {
 
 main #home_section {
   width: 100%;
-  height: 100%;
+  height: auto;
   min-height: 100vh;
   position: relative;
   -webkit-animation: 1s ease home_section forwards;
@@ -606,7 +607,7 @@ main #home_section .row .content_home .about_it a:hover i {
 
 main #about_section {
   width: 100%;
-  height: 100%;
+  height: auto;
   min-height: 100vh;
   position: relative;
   -webkit-animation: 1s ease home_section forwards;
@@ -868,5 +869,215 @@ main #about_section [class*=container] #experience_row .wrapper_col .head_name h
 
 main #about_section [class*=container] #experience_row .wrapper_col p {
   font-size: 13px;
+}
+
+main #portfolio_section {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  position: relative;
+  -webkit-animation: 1s ease home_section forwards;
+          animation: 1s ease home_section forwards;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+}
+
+@keyframes home_section {
+  0% {
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+main #portfolio_section .section_title {
+  margin: 0;
+  padding: 40px;
+}
+
+main #portfolio_section .section_title h2 {
+  font-size: 100px;
+  text-align: center;
+  color: #252525;
+  letter-spacing: 12px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+main #portfolio_section .section_title h2 span {
+  position: absolute;
+  font-size: 50px;
+  color: #ffffff;
+  letter-spacing: 1px;
+  font-weight: 900;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+main #portfolio_section .section_title h2 span b {
+  color: #ffb400;
+}
+
+main #portfolio_section [class*=container] .col_wrapper {
+  height: 250px;
+  padding: 15px;
+}
+
+main #portfolio_section [class*=container] .col_wrapper .box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+main #portfolio_section [class*=container] .col_wrapper .box__right, main #portfolio_section [class*=container] .col_wrapper .box__left, main #portfolio_section [class*=container] .col_wrapper .box__top, main #portfolio_section [class*=container] .col_wrapper .box__bottom, main #portfolio_section [class*=container] .col_wrapper .box__center {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  text-align: center;
+  line-height: inherit;
+  -webkit-transition: -webkit-transform .4s ease;
+  transition: -webkit-transform .4s ease;
+  transition: transform .4s ease;
+  transition: transform .4s ease, -webkit-transform .4s ease;
+}
+
+main #portfolio_section [class*=container] .col_wrapper .box__right:before, main #portfolio_section [class*=container] .col_wrapper .box__left:before, main #portfolio_section [class*=container] .col_wrapper .box__top:before, main #portfolio_section [class*=container] .col_wrapper .box__bottom:before, main #portfolio_section [class*=container] .col_wrapper .box__center:before {
+  position: absolute;
+  content: '';
+  /*
+                        * Calculation:
+                        *      ____a____
+                        *    /|\        |
+                        *   b | \       |
+                        *  /  a  \      |
+                        *  \  |  /      |
+                        *   \ | /       |
+                        *    \|/________|
+                        *
+                        *  a^2 = b^2+b^2
+                        *
+                        *  solve to b:
+                        *
+                        *  a^2         = 2b^2 | /2  
+                        *  a^2 / 2     =  b^2 | sqrt
+                        *  a / sqrt(2) =  b
+                        *
+                        * Percentage: 
+                        * a = 100%
+                        * 100 / sqrt(2) = 70.71%
+                        *                 ------
+                        */
+  width: 70.71%;
+  height: 70.71%;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+main #portfolio_section [class*=container] .col_wrapper .box__right:hover, main #portfolio_section [class*=container] .col_wrapper .box__left:hover, main #portfolio_section [class*=container] .col_wrapper .box__top:hover, main #portfolio_section [class*=container] .col_wrapper .box__bottom:hover, main #portfolio_section [class*=container] .col_wrapper .box__center:hover {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  z-index: 1;
+}
+
+main #portfolio_section [class*=container] .col_wrapper .box__right:hover:before, main #portfolio_section [class*=container] .col_wrapper .box__left:hover:before, main #portfolio_section [class*=container] .col_wrapper .box__top:hover:before, main #portfolio_section [class*=container] .col_wrapper .box__bottom:hover:before, main #portfolio_section [class*=container] .col_wrapper .box__center:hover:before {
+  width: 100%;
+  height: 100%;
+  -webkit-transform: none;
+          transform: none;
+}
+
+main #portfolio_section [class*=container] .col_wrapper .box__right {
+  background: orange;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+main #portfolio_section [class*=container] .col_wrapper .box__right:before {
+  right: 100%;
+  bottom: 0;
+  -webkit-transform-origin: 100% 100%;
+          transform-origin: 100% 100%;
+}
+
+main #portfolio_section [class*=container] .col_wrapper .box__right:hover ~ .box__center {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+main #portfolio_section [class*=container] .col_wrapper .box__left {
+  background: orange;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+main #portfolio_section [class*=container] .col_wrapper .box__left:before {
+  left: 100%;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+}
+
+main #portfolio_section [class*=container] .col_wrapper .box__left:hover ~ .box__center {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+main #portfolio_section [class*=container] .col_wrapper .box__top {
+  background: orange;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+main #portfolio_section [class*=container] .col_wrapper .box__top:before {
+  top: 100%;
+  right: 0;
+  -webkit-transform-origin: 100% 0;
+          transform-origin: 100% 0;
+}
+
+main #portfolio_section [class*=container] .col_wrapper .box__top:hover ~ .box__center {
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+main #portfolio_section [class*=container] .col_wrapper .box__bottom {
+  background: orange;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+main #portfolio_section [class*=container] .col_wrapper .box__bottom:before {
+  bottom: 100%;
+  left: 0;
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+}
+
+main #portfolio_section [class*=container] .col_wrapper .box__bottom:hover ~ .box__center {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+main #portfolio_section [class*=container] .col_wrapper .box__center {
+  background: transparent;
+  z-index: -1;
+}
+
+main #portfolio_section [class*=container] .col_wrapper .box__center img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 /*# sourceMappingURL=style.css.map */
