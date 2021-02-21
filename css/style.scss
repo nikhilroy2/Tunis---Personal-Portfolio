@@ -380,7 +380,7 @@ main{
                 .bg_image{
                     @include wh(90%,100%);
                     border-radius: 30px;
-                    background: url('../img/2.jpg') center / cover no-repeat;
+                    background: url('../img/nikhil.jpg') center / cover no-repeat;
                 }
                 @media (max-width: 991px){
                     @include wh(300px,300px);
@@ -632,6 +632,7 @@ main{
                     height: 100%;
                     border-radius: 15px;
                     overflow:hidden;
+                 
                   }
                   %box__dir{
                     position:absolute;
@@ -756,6 +757,8 @@ main{
                          width: 100%;
                          height: 100%;
                          object-fit: cover;
+                         cursor: pointer;
+                         pointer-events: visible;
                      }
                   }
             }

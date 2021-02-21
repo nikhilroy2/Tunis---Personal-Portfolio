@@ -473,7 +473,7 @@ main #home_section .row .profile_img .bg_image {
   width: 90%;
   height: 100%;
   border-radius: 30px;
-  background: url("../img/2.jpg") center/cover no-repeat;
+  background: url("../img/nikhil.jpg") center/cover no-repeat;
 }
 
 @media (max-width: 991px) {
@@ -1079,5 +1079,7 @@ main #portfolio_section [class*=container] .col_wrapper .box__center img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  cursor: pointer;
+  pointer-events: visible;
 }
 /*# sourceMappingURL=style.css.map */
